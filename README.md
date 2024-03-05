@@ -23,7 +23,7 @@ O objetivo deste projeto é modelar o processo de seleção de candidatos por um
 
 1. Clone o repositório para sua máquina local.
    ```bash
-   git clone https://github.com/seu-usuario/seu-repositorio.git
+   git clone https://github.com/David-Erick/Monte-Carlo.git
 
 #
 cd seu-repositorio
