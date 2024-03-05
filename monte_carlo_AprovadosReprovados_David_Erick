@@ -1,0 +1,36 @@
+import random
+
+def simularSelecao(N, numSimulacoes):
+    resultados = []
+
+    for i in range(numSimulacoes):
+        aprovadosTotais = 0
+
+        for i in range(N):
+            for i in range(10):  # 10 candidatos
+                reprovadoPrimeiraVez = random.random() < 0.5
+
+                if reprovadoPrimeiraVez:
+                    reprovadoSegundaVez = random.random() < 0.5
+                    if not reprovadoSegundaVez:
+                        aprovadosTotais += 1
+                else:
+                    aprovadosTotais += 1
+
+        percentualAprovados = (aprovadosTotais / (10 * N)) * 100
+        resultados.append(percentualAprovados)
+
+    return resultados
+
+#10k de repeticoes (na minha maquina 100k demorou 2s para rodar)
+numSimulacoes = 10000
+N = 5
+resultados = simularSelecao(N, numSimulacoes)
+
+#calculo da media dos resultados
+mediaResultados = sum(resultados) / numSimulacoes
+
+print(f"media do percentual de aprovados durante {N} anos ({numSimulacoes} simulações): {mediaResultados:.2f}%")
+
+#aluno: David Erick Araujo Ferraz
+#repositorio: https://github.com/David-Erick/Monte-Carlo.git
